@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>insertBefore demo</title>
+    <style>
+    #foo {
+        background: yellow;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="foo">FOO!</div>
+    <script>
+    $('#foo').click(function() {
+        $('<p>I would like to say:</p>').insertBefore($(this))
+    })
+    </script>
+</body>
+</html>
