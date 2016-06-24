@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Test JSONP
+  </title>
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    var postData = {
+      "Name": "assd",
+      "Email": "1@1.com",
+      "Mobile": "11111111111",
+      "Agearea": 9,
+      "Sex": 1,
+      "FromWhere": ""
+    };
+    $.ajax({
+      type: "PUT",
+      cache: false,
+      url: "http://freeexam.vipabc.com/FreeCourse/RegisterUser",
+      dataType: 'jsonp',
+      data: postData,
+      jsonpCallback: "jsonpCallback",
+      success: function (data) {
+        alert(data + 1);
+      },
+      error: function (xhr) {
+        //表单信息没有入库，抛出提示错误信息
+        //$("#emailtipsForm").html(xhr.responseText);
+      }
+    });
+
+    function jsonpCallback(data) {
+      alert(data);
+    }
+  </script>
+</body>
+</html>
